@@ -1,13 +1,15 @@
 #include <vector>
 #include "command.h"
-
+#include "hero.h"
+#include "Enemy.h"
+#include "world.h"
 namespace {
 
-	void cross_attack(Player player, Enemy enemy) 
+	void cross_attack(Hero player, Enemy enemy) 
 	{
 		// Max is there to avoid giving health point in case too high defence.
-		player.health_points -= std::max(0, enemy.attack - player.defence);
-		enemy.health_points -= std::max(0, player.attack - enemy.defence);
+		Hero.GetHealthPoints -= std::max(0, enemy.Getattack- player.Getdefence());
+		enemy.GetHealthPoints -= std::max(0, player.Getattack - enemy.Getdefense);
 		set_player(player);
 		set_enemy(enemy, enemy.x, enemy.y);
 	}
@@ -16,7 +18,7 @@ namespace {
 
 void north()
 {
-	Player player = get_player();
+	Hero player = get_player();
 	// Get the location at north of the current player.
 	TileType tile_type = get_tile_at_position(player.x, player.y - 1);
 	// If the location is not empty do NOTHING!
@@ -28,7 +30,7 @@ void north()
 
 void south()
 {
-	Player player = get_player();
+	Hero player = get_player();
 	// Get the location at north of the current player.
 	TileType tile_type = get_tile_at_position(player.x, player.y + 1);
 	// If the location is not empty do NOTHING!

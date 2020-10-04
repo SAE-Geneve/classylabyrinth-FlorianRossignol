@@ -1,6 +1,10 @@
-#include <iostream>
+#include "character.h"
 #include "tile.h"
 #include "command.h"
+#include "hero.h"
+#include "Enemy.h"
+#include "world.h"
+#include <iostream>
 
 void show_help() 
 {
@@ -15,7 +19,7 @@ void show_help()
 
 void show_state() 
 {
-	Player player = get_player();
+	Hero = get_hero();
 	// Show the maze to the user.
 	std::cout << "Maze :\n";
 	for (int i = -1; i < 2; ++i)
@@ -25,15 +29,15 @@ void show_state()
 		{
 			std::cout
 				<< " | "
-				<< (char)get_tile_at_position(player.x + j, player.y + i);
+				<< (char)get_tile_at_position(Hero.x + j, Hero.y + i);
 		}
 		std::cout << " |\n";
 	}
 	std::cout << "\t +---+---+---+\n\n";
 	// Show the player info the user.
-	std::cout << "Player(" << player.x << ", " << player.y << ") :\n";
-	std::cout << "\tname       : " << player.name << "\n";
-	std::cout << "\thit points : " << player.health_points << "\n";
+	std::cout << "Player(" << Hero.x << ", " << Hero.y << ") :\n";
+	std::cout << "\tname       : " << Hero.name << "\n";
+	std::cout << "\thit points : " << Hero.health_points << "\n";
 	std::cout << "\n";
 	// Show the enemy that are within view of the user.
 	for (int i = -1; i < 2; ++i)
@@ -41,18 +45,26 @@ void show_state()
 		for (int j = -1; j < 2; ++j)
 		{
 			if (TileType::ENEMY == 
-				get_tile_at_position(player.x + i, player.y + j))
+				get_tile_at_position(Hero.x + i, Hero.y + j))
 			{
-				Enemy enemy = get_enemy(player.x + i, player.y + j);
+				Enemy enemy = get_enemy(Hero.x + i, Hero.y + j);
 				std::cout 
-					<< "Enemy(" << player.x + i 
-					<< ", " << player.y + j 
+					<< "Enemy(" << Hero.x + i 
+					<< ", " << Hero.y + j 
 					<< ")\n";
 				std::cout << "\tname       : " << enemy.name << "\n";
-				std::cout << "\thit points : " << enemy.health_points << "\n";
+				std::cout << "\thit points : " << enemy.GetHealthPoints << "\n";
 				std::cout << "\n";
 			}
 		}
+	}
+
+	if (Hero.health_points <=0)
+	{
+		std::cout<< "you have lost !";
+
+		system("pause");
+		exit(0);
 	}
 }
 

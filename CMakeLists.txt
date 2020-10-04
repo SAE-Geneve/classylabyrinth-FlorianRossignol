@@ -14,4 +14,12 @@ add_executable(BasicLabyrinth
 	${PROJECT_SOURCE_DIR}/tile.cpp
 	${PROJECT_SOURCE_DIR}/tile.h
 	${PROJECT_SOURCE_DIR}/main.cpp
+	${PROJECT_SOURCE_DIR}/character.h
+	${PROJECT_SOURCE_DIR}/character.cpp
+	${PROJECT_SOURCE_DIR}/Enemy.h
+	${PROJECT_SOURCE_DIR}/Enemy.cpp
+	${PROJECT_SOURCE_DIR}/hero.h
+	${PROJECT_SOURCE_DIR}/hero.cpp
+	${PROJECT_SOURCE_DIR}/world.h
+	${PROJECT_SOURCE_DIR}/world.cpp
 )
