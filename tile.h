@@ -20,5 +20,3 @@ enum class CommandType
 	ATTACK,
 	HELP,
 };
-
-TileType get_tile_at_position(int x, int y);

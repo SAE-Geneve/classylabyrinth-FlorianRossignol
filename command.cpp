@@ -20,7 +20,7 @@ void north()
 {
 	Hero player = get_player();
 	// Get the location at north of the current player.
-	TileType tile_type = get_tile_at_position(player.x, player.y - 1);
+	TileType tile_type = GetTile(player.x, player.y - 1);
 	// If the location is not empty do NOTHING!
 	if (tile_type != TileType::EMPTY)
 		return;
@@ -85,7 +85,7 @@ void tick()
 {
 	// FIXME Suppose to have enemy moving soon(tm).
 	// Life regen.
-	Player player = get_player();
+	Hero player = get_player();
 	player.health_points += player.health_regen;
 	player.health_points = 
 		std::min(player.health_points, player.max_health_points);

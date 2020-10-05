@@ -19,7 +19,7 @@ void show_help()
 
 void show_state() 
 {
-	Hero = get_hero();
+	Hero = get_player();
 	// Show the maze to the user.
 	std::cout << "Maze :\n";
 	for (int i = -1; i < 2; ++i)
