@@ -1,13 +1,9 @@
 #include "Enemy.h"
 #include "character.h"
 #include <iostream>
-Enemy::Enemy(int x,
-	int y,
-	int health_points,
-	int attack,
-	int defence) : Character(x,y, health_points, attack, defence)
+Enemy::Enemy():Character(),name("Gob")
 {
-
+	
 }
 
 Enemy::~Enemy()

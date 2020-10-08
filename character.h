@@ -5,11 +5,11 @@ class Character
 {
 public:
 	Character();
-	int x = 22;
-	int y = 1;
-	int health_points = 100;
-	int attack = 20;
-	int defence = 5;
+	int x;
+	int y;
+	int health_points;
+	int attack;
+	int defence;
 
 	void Print();
 	int GetHealthPoints();

@@ -1,12 +1,12 @@
 #include "character.h"
 #include <iostream>
 
-Character::Character(
-	int x,
-	int y,
-	int health_points,
-	int attack,
-	int defence) :
+Character::Character()
+int x;
+int y;
+int health_points;
+int attack, ;
+int defence;) :
 	x_(x),
 	y_(y),
 	health_points_(health_points),

@@ -1,13 +1,14 @@
 #include "hero.h"
-Hero::Hero(
-	int x,
-	int y,
-	int health_points,
-	int attack,
-	int defence,
-	std::string name) : Character(x, y, health_points, attack, defence)
+Hero::Hero() : Character(),
+name("Hero"),
+max_health_points_(100),
+experience_(0),
+health_regen_(5)
 {
+	
 }
+
+
 int Hero::GetHealthPoints()
 {
 	return health_points_;
@@ -31,7 +32,7 @@ int Character::Gety()
 {
 	return y_;
 }
-int Hero::Get_hero(int x, int y)
+int Hero::Get_hero()
 {
 	return x;
 }

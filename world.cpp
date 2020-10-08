@@ -5,6 +5,16 @@
 #include <iostream>
 
 
+world::world()
+{
+	GetTile();
+	Get_enemy();
+	set_player();
+	xy_local();
+	local_enemy;
+}
+
+
 int world::GetTile(int x, int y)
 {
 	return (TileType)local_world[xy_local(x, y)];

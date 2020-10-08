@@ -7,13 +7,16 @@
 
 class world
 {
-private:
+	public:
 	world();
-	int GetTile(int x,int y);
+	int GetTile();
 	std::map<std::pair<int, int>, Enemy > local_enemy;
-	int xy_local(int x,int y);
-	int Get_enemy(int x,int y);
-	int set_player(int x,int y);
+	int xy_local();
+	int Get_enemy();
+	int set_player();
+
+protected:
+
 	std::string local_world =
 
 		"########################" // 24 * 8

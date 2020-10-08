@@ -4,23 +4,17 @@
 
 class Enemy : public Character
 {
-private:
-	Enemy();
-	int x;
-	int y;
-	int health_points = 50;
-	int attack = 10;
-	int defence = 2;
-		
+public:
+
 	~Enemy();
 	
 	void Print();
 	int GetHealthPoints();
 	int Getattack();
 	int Getdefence();
-	int Getx(int x);
-	int Gety(int y);
-public:
+	int Getx();
+	int Gety();
+protected:
 	Enemy();
 	void enemylost();
 	std::string name = "Gob";	
