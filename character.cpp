@@ -6,7 +6,7 @@ int x;
 int y;
 int health_points;
 int attack, ;
-int defence;) :
+int defence;)) :
 	x_(x),
 	y_(y),
 	health_points_(health_points),

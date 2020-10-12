@@ -14,6 +14,11 @@ world::world()
 	local_enemy;
 }
 
+std::map<std::pair<int, int>, Enemy> local_enemy;
+Hero local_player{};
+void set_enemy(Enemy enemy, int x, int y);
+Enemy get_enemy(int x, int y);
+Hero get_player();
 
 int world::GetTile(int x, int y)
 {
@@ -51,12 +56,6 @@ int world::set_player(int x,int y)
 	// Reinclude the new player.
 	local_world[xy_local(Hero.x, Hero.y)] = 'P';
 }
-
-std::map<std::pair<int, int>, Enemy> local_enemy;
-Hero local_player{};
-void set_enemy(Enemy enemy, int x, int y);
-Enemy get_enemy(int x, int y);
-Hero get_player();
 
 
 Hero get_player()
