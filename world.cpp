@@ -11,19 +11,13 @@ world::world()
 	Get_enemy();
 	set_player();
 	xy_local();
+	set_player();
 	local_enemy;
 }
 
-std::map<std::pair<int, int>, Enemy> local_enemy;
 Hero local_player{};
-void set_enemy(Enemy enemy, int x, int y);
 Enemy get_enemy(int x, int y);
 Hero get_player();
-
-int world::GetTile(int x, int y)
-{
-	return (TileType)local_world[xy_local(x, y)];
-}
 
 int world::xy_local(int x,int y)
 {
@@ -37,6 +31,12 @@ int world::xy_local(int x,int y)
 	// split it.
 	return x + y * 24;
 }
+
+int world::GetTile(int x, int y)
+{
+  return (TileType)local_world[xy_local(x, y)];
+}
+
 
 int world::Get_enemy(int x,int y)
 {

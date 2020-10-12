@@ -3,6 +3,7 @@
 #include "hero.h"
 #include "Enemy.h"
 #include "world.h"
+
 namespace {
 
 	void cross_attack(Hero player, Enemy enemy) 
@@ -32,7 +33,7 @@ void south()
 {
 	Hero player = get_player();
 	// Get the location at north of the current player.
-	TileType tile_type = get_tile_at_position(player.x, player.y + 1);
+	TileType tile_type = GetTile(player.x, player.y + 1);
 	// If the location is not empty do NOTHING!
 	if (tile_type != TileType::EMPTY)
 		return;
@@ -42,9 +43,9 @@ void south()
 
 void east()
 {
-	Player player = get_player();
+	Hero player = get_player();
 	// Get the location at north of the current player.
-	TileType tile_type = get_tile_at_position(player.x + 1, player.y);
+	TileType tile_type = GetTile(player.x + 1, player.y);
 	// If the location is not empty do NOTHING!
 	if (tile_type != TileType::EMPTY)
 		return;
@@ -54,9 +55,9 @@ void east()
 
 void west()
 {
-	Player player = get_player();
+	Hero player = get_player();
 	// Get the location at north of the current player.
-	TileType tile_type = get_tile_at_position(player.x - 1, player.y);
+	TileType tile_type = GetTile(player.x - 1, player.y);
 	// If the location is not empty do NOTHING!
 	if (tile_type != TileType::EMPTY)
 		return;
@@ -66,16 +67,16 @@ void west()
 
 void attack()
 {
-	Player player = get_player();
+	Hero player = get_player();
 	std::vector<Enemy> enemy_vec;
 	// for now only attack enemy that are in strait line +.
-	if (TileType::ENEMY == get_tile_at_position(player.x, player.y - 1))
+	if (TileType::ENEMY == GetTile(player.x, player.y - 1))
 		enemy_vec.push_back(get_enemy(player.x, player.y - 1));
-	if (TileType::ENEMY == get_tile_at_position(player.x, player.y + 1))
+	if (TileType::ENEMY == GetTile(player.x, player.y + 1))
 		enemy_vec.push_back(get_enemy(player.x, player.y + 1));
-	if (TileType::ENEMY == get_tile_at_position(player.x - 1, player.y))
+	if (TileType::ENEMY == GetTile(player.x - 1, player.y))
 		enemy_vec.push_back(get_enemy(player.x - 1, player.y));
-	if (TileType::ENEMY == get_tile_at_position(player.x + 1, player.y))
+	if (TileType::ENEMY == GetTile(player.x + 1, player.y))
 		enemy_vec.push_back(get_enemy(player.x + 1, player.y));
 	for (const auto& enemy : enemy_vec)
 		cross_attack(player, enemy);

@@ -14,6 +14,8 @@ class world
 	int xy_local();
 	int Get_enemy();
 	int set_player();
+	void set_enemy(Enemy enemy, int x, int y);
+	
 
 protected:
 

@@ -29,7 +29,7 @@ void show_state()
 		{
 			std::cout
 				<< " | "
-				<< (char)get_tile_at_position(Hero.x + j, Hero.y + i);
+				<< (char)GetTile(Hero.x + j, Hero.y + i);
 		}
 		std::cout << " |\n";
 	}
@@ -45,7 +45,7 @@ void show_state()
 		for (int j = -1; j < 2; ++j)
 		{
 			if (TileType::ENEMY == 
-				get_tile_at_position(Hero.x + i, Hero.y + j))
+				GetTile(Hero.x + i, Hero.y + j))
 			{
 				Enemy enemy = get_enemy(Hero.x + i, Hero.y + j);
 				std::cout 
